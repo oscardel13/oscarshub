@@ -1,0 +1,50 @@
+type Query{
+    resumes: [Resume]
+    resumeByVersion(version: ID!): Resume
+}
+
+type Resume{
+    version: ID!
+    name: String!
+    email: String!
+    github: String!
+    phone: String!
+    linkedin: String!
+    experiences: [Experience]!
+    educations: [Education]!
+    certificates: [Certificate]!
+    skills: [String]!
+    projects: [Project]!
+}
+
+type Experience{
+    title: String!
+    company: String!
+    startDate: String!
+    endDate: String!
+    description: String!
+}
+
+type Education{
+    school: String!
+    major: String!
+    startDate: String!
+    endDate: String!
+}
+
+type Certificate{
+    name: String!
+    organization: String!
+    issueDate: String!
+    credentialId: String!
+    credentialURL: String!
+        
+}
+
+type Project{
+    name: String!
+    url: String!
+    techStack: [ String ]!
+    description: String!
+}
+
