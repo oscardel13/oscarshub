@@ -1,3 +1,10 @@
+#root{
+  background-image: url(https://static.vecteezy.com/system/resources/previews/002/099/717/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg);
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
 .App {
   text-align: center;
 }
@@ -26,6 +33,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }
 
 @keyframes App-logo-spin {

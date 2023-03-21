@@ -8,3 +8,5 @@ export function EmbeddedSandBox(){
         />
     )
 }
+
+export default EmbeddedSandBox;
