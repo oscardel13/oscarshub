@@ -79,7 +79,7 @@ const InfoBar = () =>{
             </div>
 
             <div className="socials">
-                <Stack direction="horizontal" gap={5}>
+                <Stack direction="horizontal">
                     <a href='https://www.linkedin.com/in/oscardel13/'>
                         <i className="fab fa-linkedin-square"></i>
                     </a>

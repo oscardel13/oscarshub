@@ -1,8 +1,9 @@
 #info-bar{
     background: #20202a;
     width: 100%;
-    min-width: 290px;
-    height: calc(100vh - 30px);
+    min-width: 220px;
+    /* max-width: ; */
+    height: 100%;
     position: relative;
     z-index: 999;
     -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
@@ -106,7 +107,25 @@
     width: 100%;
     height: 100%;
     justify-content: center;
+    gap: 3rem;
 }
+
+@media only screen and (max-width: 1200px){
+    .socials .hstack{
+        gap: 2rem;
+    }
+
+}
+
+/* @media only screen and (max-width: 991.99px){
+    #info-bar{
+        background: #20202a;
+        width: 0%;
+        min-width: 0px;
+        visibility: hidden;
+
+    }  
+} */
 
 .socials a{
     color: inherit;

@@ -11,9 +11,10 @@ import './swap-menu.styles.css'
 
 const SwapMenu = () =>{
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark-blue" variant="dark">
+        <Navbar collapseOnSelect expand="sm" bg="dark-blue" variant="dark">
             <Container>
             <Navbar.Brand href="#home"></Navbar.Brand>
+            {/* <i className="fas fa-ellipsis-v" style={{'fontSize':'26px'}}></i> */}
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
