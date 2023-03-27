@@ -26,7 +26,7 @@ jobs:
       # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
 
       # Push Images to docker hub
-      # - run: docker push oscardel13/multi-client-3-9 
-      # - run: docker push oscardel13/multi-nginx-3-9 
-      # - run: docker push oscardel13/multi-server-3-9 
-      # - run: docker push oscardel13/multi-worker-3-9 
+      - run: docker push oscardel13/oscarswork-client
+      - run: docker push oscardel13/oscarswork-nginx
+      - run: docker push oscardel13/oscarswork-server 
+      # - run: docker push oscardel13/multi-worker-3-9 l
