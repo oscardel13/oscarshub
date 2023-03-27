@@ -3,19 +3,25 @@ version: '3'
 services:
   api:
     build:
-      dockerfile: dockerfile.dev
       context: ./server
+      dockerfile: dockerfile.dev  
 
   client:
     build: 
       context: ./client
       dockerfile: dockerfile.dev
 
+  nasaproject:
+    image: oscardel13/nasa-project
+    ports:
+      - 5000:8000
+
   nginx:
     restart: always
     depends_on:
       - api
       - client
+      - nasaproject
     build: 
       context: ./nginx
       dockerfile: dockerfile.dev

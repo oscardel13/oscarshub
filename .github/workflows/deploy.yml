@@ -20,9 +20,9 @@ jobs:
       # - run: docker run -e CI=true oscardel13/react-test npm test
 
       # Build Production Images
-      # - run: docker build -t oscardel13/multi-client-3-9 ./client
-      # - run: docker build -t oscardel13/multi-nginx-3-9 ./nginx
-      # - run: docker build -t oscardel13/multi-server-3-9 ./server
+      - run: docker build -t oscardel13/oscarswork-client ./client
+      - run: docker build -t oscardel13/oscarswork-nginx ./nginx
+      - run: docker build -t oscardel13/oscarswork-server ./server
       # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
 
       # Push Images to docker hub

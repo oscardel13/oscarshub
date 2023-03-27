@@ -8,10 +8,15 @@ import profilePicture from '../../assets/oscar.jpg'
 // import oscarResume from '../../assets/OscarsResume.pdf'
 import './info-bar.styles.css'
 
-const InfoBar = () =>{
+const InfoBar = (props: {hide: ()=>void}) =>{
     return (
         <Stack gap={3} id="info-bar">
             <div className="header">
+                <div>
+                    <a onClick={props.hide} id="closeInfoBar">
+                        <i className="fas fa-ellipsis-v" style={{'fontSize':'26px'}}></i>
+                    </a>
+                </div>
                 <div className="avatar">
                     <Image roundedCircle src={profilePicture}></Image>
                 </div>

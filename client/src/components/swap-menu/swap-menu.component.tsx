@@ -9,12 +9,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import './swap-menu.styles.css'
 
-const SwapMenu = () =>{
+const SwapMenu = (props: {hide: ()=>void}) =>{
     return (
         <Navbar collapseOnSelect expand="sm" bg="dark-blue" variant="dark">
             <Container>
             <Navbar.Brand href="#home"></Navbar.Brand>
-            {/* <i className="fas fa-ellipsis-v" style={{'fontSize':'26px'}}></i> */}
+            <a onClick={props.hide} id="mobileHide">
+                <i className="fas fa-ellipsis-h" style={{'fontSize':'26px'}}></i>
+            </a>
+            
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">

@@ -10,6 +10,7 @@
     box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
     -webkit-transition: 0.55s ease-in-out;
     transition: 0.55s ease-in-out;
+    padding-left: 0;
 }
 
 .header{
@@ -129,4 +130,16 @@
 
 .socials a{
     color: inherit;
+}
+
+#closeInfoBar{
+    color: #8c8c8e;
+    position: absolute;
+    left: 94%;
+}
+
+@media only screen and (min-width: 993px){
+    #closeInfoBar{
+        display: none;
+    }
 }
