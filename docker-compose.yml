@@ -9,7 +9,7 @@ services:
   client:
     build: 
       context: ./client
-      dockerfile: dockerfile.dev
+      dockerfile: dockerfile
 
   nginx:
     restart: always
