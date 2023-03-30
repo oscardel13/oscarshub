@@ -20,7 +20,7 @@ const resolversArray = loadFilesSync(path.join(__dirname, 'graphql/**/*'),{
 
 const { mongoConnect } = require('./services/mongo');
 
-const PORT = process.env.PORT || 8001;
+const PORT = process.env.PORT || 8000;
 
 async function startApolloServer(){
     // const app = express()
