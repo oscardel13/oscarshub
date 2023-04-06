@@ -22,8 +22,9 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                 <Nav.Link href='#home'>Home</Nav.Link>
-                <Nav.Link href="#portfolio">Portfolio</Nav.Link>
-                <Nav.Link href="#history">History</Nav.Link>
+                <Nav.Link href="#portfolio">Resume</Nav.Link>
+                <Nav.Link href="#history">Projects</Nav.Link>
+                <Nav.Link href="#contact">Contact</Nav.Link>
                 <Nav.Link href="#blog">Blog</Nav.Link>
                 
                 </Nav>

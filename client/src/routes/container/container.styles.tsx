@@ -26,7 +26,7 @@ export const InfoBarContainer = styled(Col)<{hide: Boolean}>`
     height: 100%;
     // transition: 2s ease-in-out
 
-    @media only screen and (max-width: 991.99px){
+    @media only screen and (max-width: 992px){
         ${props => (props.hide ? {"display":"none"}: {"display":"contents"} )};
 
     }
@@ -35,7 +35,7 @@ export const InfoBarContainer = styled(Col)<{hide: Boolean}>`
 export const ContentContainer = styled(Col)<{hide: Boolean}>`
     overflow-y: scroll;
     height: inherit;
-    @media only screen and (max-width: 991.99px){
+    @media only screen and (max-width: 992px){
         ${props => (!props.hide ? {"display":"none"}: {"display":"unset"} )};
 
     }
