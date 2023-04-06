@@ -28,9 +28,9 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                 
                 </Nav>
                 <Nav>
-                <Nav.Link href="#deets">More deets</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
-                    Dank memes
+                <Nav.Link href="http://nasaproject.oscarswork.com/">Nasa Project</Nav.Link>
+                <Nav.Link eventKey={2} href="https://crwnclothing.oscarswork.com/">
+                    Crwn Clothing
                 </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

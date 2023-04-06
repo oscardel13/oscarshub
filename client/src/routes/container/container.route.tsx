@@ -7,7 +7,7 @@ import InfoBar from "../../components/info-bar/info-bar.component";
 import SwapMenu from "../../components/swap-menu/swap-menu.component";
 
 // import './container.styles.css'
-import { MainContainer, MainRow, InfoBarContainer, ContentContainer } from './container.styles'
+import { MainContainer, MainRow, InfoBarContainer, ContentContainer, ContentRow } from './container.styles'
 
 const AppContainer = () => {
     const [isHidden, setIsHidden] = useState(true)
@@ -20,15 +20,13 @@ const AppContainer = () => {
         <MainContainer>
             <MainRow>           
                 <InfoBarContainer lg={3} id="InfoBar" hide={isHidden}>
-                    {/* <Container id="InfoBar"> */}
                         <InfoBar hide={onHideEvent}/>
-                    {/* </Container> */}
                 </InfoBarContainer>               
                 <ContentContainer lg={9} xs={12} hide={isHidden}>
                     <SwapMenu hide={onHideEvent}/>
-                    <Row>
+                    <ContentRow>
                             <Outlet/>   
-                    </Row>                               
+                    </ContentRow>                               
                 </ContentContainer>
             </MainRow>
         </MainContainer>
