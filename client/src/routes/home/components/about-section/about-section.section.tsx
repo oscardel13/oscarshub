@@ -1,11 +1,11 @@
 import { Col, Row } from "react-bootstrap"
-import { AboutImage, AboutSectionDiv, AboutText } from "./about-section.styles"
+import { AboutImage, AboutContainer, AboutText } from "./about-section.styles"
 
 import ProfilePicture from '../../../../assets/profile.jpg'
 
 const AboutSection = () => {
     return (
-        <AboutSectionDiv id="about-section">
+        <AboutContainer id="about-section">
             <Row>
                 <Col lg={6}>
                     <AboutImage src={ProfilePicture}/>
@@ -27,7 +27,7 @@ const AboutSection = () => {
                     </AboutText>
                 </Col>
             </Row>
-        </AboutSectionDiv>
+        </AboutContainer>
     )
 }
 

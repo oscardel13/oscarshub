@@ -11,7 +11,7 @@ import './swap-menu.styles.css'
 
 const SwapMenu = (props: {hide: ()=>void}) =>{
     return (
-        <Navbar collapseOnSelect expand="sm" bg="dark-blue" variant="dark">
+        <Navbar collapseOnSelect expand="sm" bg="dark-blue" variant="dark" sticky='top'>
             <Container>
             <Navbar.Brand href="#home"></Navbar.Brand>
             <a onClick={props.hide} id="mobileHide">
