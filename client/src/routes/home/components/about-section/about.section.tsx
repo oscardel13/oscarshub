@@ -1,5 +1,6 @@
-import { Col, Row } from "react-bootstrap"
-import { AboutImage, AboutContainer, AboutText } from "./about-section.styles"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import { AboutImage, AboutContainer, AboutText } from "./about.styles"
 
 import ProfilePicture from '../../../../assets/profile.jpg'
 

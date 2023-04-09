@@ -1,4 +1,4 @@
-import { Image } from 'react-bootstrap'
+import Image from 'react-bootstrap/Image'
 
 import styled from 'styled-components'
 
@@ -9,6 +9,7 @@ export const AboutImage = styled(Image)`
 export const AboutContainer = styled.section`
     text-align: center;
     padding-top: 20px;
+    padding-right: 20px;
 `
 
 export const AboutText = styled.div`

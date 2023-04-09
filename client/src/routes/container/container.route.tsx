@@ -1,12 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
-import Row from 'react-bootstrap/Row';
-
 
 import InfoBar from "../../components/info-bar/info-bar.component";
 import SwapMenu from "../../components/swap-menu/swap-menu.component";
 
-// import './container.styles.css'
 import { MainContainer, MainRow, InfoBarContainer, ContentContainer, ContentRow } from './container.styles'
 
 const AppContainer = () => {

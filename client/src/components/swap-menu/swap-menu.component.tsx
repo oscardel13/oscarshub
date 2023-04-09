@@ -1,11 +1,6 @@
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
 
 import './swap-menu.styles.css'
 
@@ -22,8 +17,8 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                 <Nav.Link href='#home'>Home</Nav.Link>
-                <Nav.Link href="#portfolio">Resume</Nav.Link>
-                <Nav.Link href="#history">Projects</Nav.Link>
+                <Nav.Link href="#resume-section">Resume</Nav.Link>
+                <Nav.Link href="#project-section">Projects</Nav.Link>
                 <Nav.Link href="#contact">Contact</Nav.Link>
                 <Nav.Link href="#blog">Blog</Nav.Link>
                 

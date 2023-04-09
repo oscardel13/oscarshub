@@ -1,36 +1,29 @@
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-import Card from 'react-bootstrap/Card';
+import EducationSection from '../education-section/education.section';
+import CertificateSection from '../certificates-section/certificates.section';
+import ExperienceSection from '../experience-section/experience.section';
 
-import { ResumeContainer, ResumeCard } from "./resume-section.styles"
+import { ResumeContainer, ResumeRow } from "./resume-section.styles"
 
 const ResumeSection = () => {
     return (
-        <ResumeContainer>
+        <ResumeContainer id='resume-section'>
             <h1 style={{"textAlign":"center"}}>My <strong>Resume</strong></h1>
-            <Row>
-                <Col>
-                    <Row>
-                        <h3>My <strong>Educations</strong></h3>
-                        <ResumeCard style={{ width: '80%' }}>
-                            <Card.Body>
-                                <Card.Title>University of Colorado at Boulder</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Bachelor of Arts, Computer Science</Card.Subtitle>
-                                <Card.Text>
-                                    Where I started to code and found my hobbies. Founded the CU Bouldering Club
-                                </Card.Text>
-
-                            </Card.Body>
-                        </ResumeCard>
-                    </Row>
-                    <Row>
-                        <h3>My <strong>Certificates</strong></h3>
-                    </Row>
+            <ResumeRow>
+                <Col lg={6}>
+                    <ResumeRow>
+                        <EducationSection/>
+                    </ResumeRow>
+                    <ResumeRow>
+                        <CertificateSection/>
+                    </ResumeRow>
                 </Col>
-                <Col>
-                    <h3>My <strong>Experience</strong></h3>
+                <Col lg={6}>
+                    <ResumeRow>
+                        <ExperienceSection/>
+                    </ResumeRow>
                 </Col>
-            </Row>
+            </ResumeRow>
         </ResumeContainer>
     )
 }
