@@ -30,3 +30,12 @@ jobs:
       - run: docker push oscardel13/oscarswork-nginx
       - run: docker push oscardel13/oscarswork-server 
       # - run: docker push oscardel13/multi-worker-3-9 l
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to EC2
+      - run: ssh -i ${{ SSH_PRIVATE_KEY }} ${{ EC2_USERNAME }}@${{ EC2_HOSTNAME }}
+      - run: echo "Hello Wold"
