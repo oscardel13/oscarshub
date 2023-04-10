@@ -1,20 +1,42 @@
 import Image from 'react-bootstrap/Image'
 import Stack from 'react-bootstrap/Stack';
+import CloseButton from 'react-bootstrap/CloseButton';
 
 import HardSkill from '../hard-skill/hard-skill.component';
 import InfoBarKnowledge from '../info-bar-knowledge/info-bar-knowledge.component';
 
 import profilePicture from '../../assets/oscar.jpg'
 // import oscarResume from '../../assets/OscarsResume.pdf'
+import { ReactComponent as LinkedIn } from '../../assets/linkedin-3.svg'
+import { ReactComponent as GitHub } from '../../assets/github-1.svg'
+import { ReactComponent as StackOverFlow } from '../../assets/stack-overflow.svg'
+import { ReactComponent as Docker } from '../../assets/docker.svg'
+
+
 import './info-bar.styles.css'
 
-const InfoBar = (props: {hide: ()=>void}) =>{
+const InfoBar = (props: {hide: () => void}) =>{
+    const onButtonClick = () => {
+        // using Java Script method to get PDF file
+        fetch('OscarsResume.pdf').then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                // Setting various property values
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = 'SamplePDF.pdf';
+                alink.click();
+            })
+        })
+    } 
+
     return (
         <Stack gap={3} id="info-bar">
             <div className="header">
                 <div>
                     <a onClick={props.hide} id="closeInfoBar">
-                        <i className="fas fa-ellipsis-v" style={{'fontSize':'26px'}}></i>
+                        <CloseButton variant="white"/>
                     </a>
                 </div>
                 <div className="avatar">
@@ -75,8 +97,8 @@ const InfoBar = (props: {hide: ()=>void}) =>{
                     <hr />
 
                     <div className="cv">
-                        {/* TO DO!!! Make endpoint to download resume */}
-                        <a href="">&#10233; DOWNLOAD CV &#10232;</a>
+                        <a onClick={onButtonClick}>&#10233; DOWNLOAD CV &#10232;</a>
+                        {/* <a href="../../assets/OscarsResume.pdf" download>&#10233; DOWNLOAD CV &#10232;</a> */}
                     </div>
 
                 </div>
@@ -86,16 +108,16 @@ const InfoBar = (props: {hide: ()=>void}) =>{
             <div className="socials">
                 <Stack direction="horizontal">
                     <a href='https://www.linkedin.com/in/oscardel13/'>
-                        <i className="fab fa-linkedin-square"></i>
+                        <LinkedIn style={{fill: "#0077B5"}}/>
                     </a>
                     <a href="https://github.com/oscardel13">
-                        <i className="fab fa-github"></i>
+                        <GitHub/>
                     </a>
                     <a href='https://stackoverflow.com/users/14166743/oscar-delgado'>
-                        <i className="fab fa-stack-overflow"></i>
+                        <StackOverFlow/>
                     </a>
                     <a href='https://hub.docker.com/u/oscardel13'>
-                        <i className="fab fa-docker"></i>
+                        <Docker/>
                     </a>
                 </Stack>
             </div>

@@ -2,7 +2,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { AboutImage, AboutContainer, AboutText } from "./about.styles"
 
-import ProfilePicture from '../../../../assets/profile.jpg'
+import ProfilePicture from '../../../../assets/profile-2.jpg'
 
 const AboutSection = () => {
     return (

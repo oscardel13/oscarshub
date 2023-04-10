@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 export const MainContainer = styled(Container)`
     padding-top: 15px;
     padding-bottom: 15px;
-    opacity: 95%;
+    // opacity: 95%;
     height: calc(100vh - 30px);
     @media only screen and (max-width: 576px){
         padding-bottom: 0;
@@ -16,7 +16,7 @@ export const MainContainer = styled(Container)`
 `
 
 export const MainRow = styled(Row)`
-    background: #2a2a38; 
+    background: rgb(42, 42, 56, 0.95);
     color: wheat;
     height: 100%;
 `

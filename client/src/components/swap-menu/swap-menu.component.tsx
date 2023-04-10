@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+import { ReactComponent as ProfileSVG } from '../../assets/profile.svg';
+
 import './swap-menu.styles.css'
 
 const SwapMenu = (props: {hide: ()=>void}) =>{
@@ -10,7 +12,7 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
             <Container>
             <Navbar.Brand href="#home"></Navbar.Brand>
             <a onClick={props.hide} id="mobileHide">
-                <i className="fas fa-ellipsis-h" style={{'fontSize':'26px'}}></i>
+                <ProfileSVG style={{fill:"var(--bs-navbar-color)", width: "30px", height: "30px"}}/>
             </a>
             
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

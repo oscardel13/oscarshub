@@ -1,5 +1,5 @@
 #info-bar{
-    background: #20202a;
+    background: rgb(32,32,42,0.95);
     width: 100%;
     min-width: 220px;
     /* max-width: ; */
@@ -118,6 +118,35 @@
 
 }
 
+@media only screen and (max-width: 992px){
+    .socials .hstack{
+        gap: 10rem;
+    }
+
+}
+
+@media only screen and (max-width: 767px){
+    .socials .hstack{
+        gap: 7rem;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+    .socials .hstack{
+        gap: 5rem;
+    }
+
+}
+
+@media only screen and (max-width: 380px){
+    .socials .hstack{
+        gap: 4rem;
+    }
+
+}
+
+
 /* @media only screen and (max-width: 991.99px){
     #info-bar{
         background: #20202a;
@@ -135,11 +164,17 @@
 #closeInfoBar{
     color: #8c8c8e;
     position: absolute;
-    left: 94%;
+    left: 93%;
 }
 
 @media only screen and (min-width: 993px){
     #closeInfoBar{
         display: none;
     }
+}
+
+svg{
+    height: 50px;
+    width: 25px;
+    fill: white;
 }
