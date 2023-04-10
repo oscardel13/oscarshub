@@ -24,8 +24,7 @@ export const MainRow = styled(Row)`
 export const InfoBarContainer = styled(Col)<{hide: Boolean}>`
     padding-left: 0; 
     height: 100%;
-    // transition: 2s ease-in-out
-
+    transition: 0.5s ease-in-out 0.5s;
     @media only screen and (max-width: 992px){
         ${props => (props.hide ? {"display":"none"}: {"display":"contents"} )};
 
@@ -35,6 +34,7 @@ export const InfoBarContainer = styled(Col)<{hide: Boolean}>`
 export const ContentContainer = styled(Col)<{hide: Boolean}>`
     overflow-y: scroll;
     height: inherit;
+    transition: 0.5s ease-in-out 0.5s;
     @media only screen and (max-width: 992px){
         ${props => (!props.hide ? {"display":"none"}: {"display":"unset"} )};
 

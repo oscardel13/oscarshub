@@ -12,11 +12,10 @@ const AppContainer = () => {
     const onHideEvent = () => {
         setIsHidden(!isHidden)
     }
-
     return (
         <MainContainer>
             <MainRow>           
-                <InfoBarContainer lg={3} id="InfoBar" hide={isHidden}>
+                <InfoBarContainer lg={3} xs={0} id="InfoBar" hide={isHidden}>
                         <InfoBar hide={onHideEvent}/>
                 </InfoBarContainer>               
                 <ContentContainer lg={9} xs={12} hide={isHidden}>
