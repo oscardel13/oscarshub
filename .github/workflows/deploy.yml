@@ -48,4 +48,4 @@ jobs:
           # port: <your-ssh-port> # Optional, default is 22
           command: 'ls -l' # Example command to run on the EC2 instance
       - name: Test
-        run: docker-compose down
+        run: docker ps
