@@ -51,5 +51,5 @@ jobs:
     - name: SSH into EC2 and pull images
       run: |
         mkdir test
-        ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }}
+        # ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }}
         echo "Hello World"
