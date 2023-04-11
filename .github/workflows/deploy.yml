@@ -48,4 +48,4 @@ jobs:
 
           script: |
             docker-compose down
-            docker-compose up --pull=true
+            docker-compose up --pull=true -d
