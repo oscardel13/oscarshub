@@ -48,4 +48,5 @@ jobs:
 
           script: |
             echo "Hello from the EC2 instance!"
+            docker ps
             # docker-compose down
