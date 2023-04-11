@@ -31,20 +31,40 @@ jobs:
       - run: docker push oscardel13/oscarshub-server 
       # - run: docker push oscardel13/multi-worker-3-9 l
 
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   name: Deploy to EC2
+  #   steps:
+  #     # - name: Checkout
+  #     #   uses: actions/checkout@v3
+  #     # - name: Configure AWS Credentials
+  #     - uses: aws-actions/configure-aws-credentials@v2
+  #     with:
+  #       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #       aws-region: ${{ secrets.AWS_REGION}}
+
+  #     run: |
+  #       ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }} -yes
+  #       echo "Hello Wold"
+
   deploy:
-    needs: build
+    name: Upload to Amazon S3
     runs-on: ubuntu-latest
-    name: Deploy to EC2
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v3
-      # - name: Configure AWS Credentials
-      - uses: aws-actions/configure-aws-credentials@v2
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Configure AWS credentials from Test account
+      uses: aws-actions/configure-aws-credentials@v2
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION}}
-
+    - name: Copy files to the test website with the AWS CLI
       run: |
-        ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }} -yes
         echo "Hello Wold"
