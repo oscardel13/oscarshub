@@ -6,30 +6,30 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      # Docker Login
-      - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      # Build Client and run test
-      - run: docker build -t oscardel13/react-test -f ./client/dockerfile.dev ./client
-      - run: docker run -e CI=true oscardel13/react-test npm test
-      # Build Server and run test
-      # - run: docker build -t oscardel13/server-test -f ./server/dockerfile.dev ./server
-      # - run: docker run -e CI=true oscardel13/react-test npm test
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     # Docker Login
+  #     - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+  #     # Build Client and run test
+  #     - run: docker build -t oscardel13/react-test -f ./client/dockerfile.dev ./client
+  #     - run: docker run -e CI=true oscardel13/react-test npm test
+  #     # Build Server and run test
+  #     # - run: docker build -t oscardel13/server-test -f ./server/dockerfile.dev ./server
+  #     # - run: docker run -e CI=true oscardel13/react-test npm test
 
-      # Build Production Images
-      - run: docker build -t oscardel13/oscarshub-client ./client
-      - run: docker build -t oscardel13/oscarshub-nginx ./nginx
-      - run: docker build -t oscardel13/oscarshub-server ./server
-      # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
+  #     # Build Production Images
+  #     - run: docker build -t oscardel13/oscarshub-client ./client
+  #     - run: docker build -t oscardel13/oscarshub-nginx ./nginx
+  #     - run: docker build -t oscardel13/oscarshub-server ./server
+  #     # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
 
-      # Push Images to docker hub
-      - run: docker push oscardel13/oscarshub-client
-      - run: docker push oscardel13/oscarshub-nginx
-      - run: docker push oscardel13/oscarshub-server 
-      # - run: docker push oscardel13/multi-worker-3-9 l
+  #     # Push Images to docker hub
+  #     - run: docker push oscardel13/oscarshub-client
+  #     - run: docker push oscardel13/oscarshub-nginx
+  #     - run: docker push oscardel13/oscarshub-server 
+  #     # - run: docker push oscardel13/multi-worker-3-9 l
 
   deploy:
     # needs: build
@@ -48,4 +48,4 @@ jobs:
           # port: <your-ssh-port> # Optional, default is 22
           command: 'ls -l' # Example command to run on the EC2 instance
       - name: Test
-        run: mkdir test
+        run: docker-compose down
