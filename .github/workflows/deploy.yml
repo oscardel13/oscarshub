@@ -46,6 +46,6 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          command: 'ls -l' # Example command to run on the EC2 instance
-      - name: Test
-        run: docker ps
+          command: |
+            'ls -l' # Example command to run on the EC2 instance
+            docker ps
