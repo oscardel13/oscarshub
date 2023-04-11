@@ -67,4 +67,5 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION}}
     - name: Copy files to the test website with the AWS CLI
       run: |
+        ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }} -yes
         echo "Hello Wold"
