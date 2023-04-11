@@ -5,7 +5,7 @@ const HeroSection = () => {
         <section>
             <Banner>
                 <BannerTextBox>
-                    <h1>Welcome to Oscars Works</h1>
+                    <h1>Welcome to Oscars Hub</h1>
                 </BannerTextBox>
             </Banner>
         </section>

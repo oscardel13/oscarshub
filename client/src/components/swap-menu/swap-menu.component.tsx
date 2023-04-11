@@ -26,8 +26,8 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                 
                 </Nav>
                 <Nav>
-                <Nav.Link href="http://nasaproject.oscarswork.com/">Nasa Project</Nav.Link>
-                <Nav.Link eventKey={2} href="https://crwnclothing.oscarswork.com/">
+                <Nav.Link href="http://nasaproject.oscarshub.com/">Nasa Project</Nav.Link>
+                <Nav.Link eventKey={2} href="https://crwnclothing.oscarshub.com/">
                     Crwn Clothing
                 </Nav.Link>
                 </Nav>

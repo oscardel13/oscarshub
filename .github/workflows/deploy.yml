@@ -20,22 +20,27 @@ jobs:
       # - run: docker run -e CI=true oscardel13/react-test npm test
 
       # Build Production Images
-      - run: docker build -t oscardel13/oscarswork-client ./client
-      - run: docker build -t oscardel13/oscarswork-nginx ./nginx
-      - run: docker build -t oscardel13/oscarswork-server ./server
+      - run: docker build -t oscardel13/oscarshub-client ./client
+      - run: docker build -t oscardel13/oscarshub-nginx ./nginx
+      - run: docker build -t oscardel13/oscarshub-server ./server
       # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
 
       # Push Images to docker hub
-      - run: docker push oscardel13/oscarswork-client
-      - run: docker push oscardel13/oscarswork-nginx
-      - run: docker push oscardel13/oscarswork-server 
+      - run: docker push oscardel13/oscarshub-client
+      - run: docker push oscardel13/oscarshub-nginx
+      - run: docker push oscardel13/oscarshub-server 
       # - run: docker push oscardel13/multi-worker-3-9 l
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     name: Deploy to EC2
-    steps:
-      - uses: actions/checkout@v3
-      - run: ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }} -yes
-      - run: echo "Hello Wold"
+    uses: aws-actions/configure-aws-credentials@v1
+    with:
+      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-region: ${{ secrets.AWS_REGION}}
+
+    run: |
+      ssh -i "${{ secrets.SSH_PRIVATE_KEY }}" ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOSTNAME }} -yes
+      echo "Hello Wold"
