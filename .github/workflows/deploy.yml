@@ -6,53 +6,46 @@ on:
     branches: [main]
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     # Docker Login
-  #     - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-  #     # Build Client and run test
-  #     - run: docker build -t oscardel13/react-test -f ./client/dockerfile.dev ./client
-  #     - run: docker run -e CI=true oscardel13/react-test npm test
-  #     # Build Server and run test
-  #     # - run: docker build -t oscardel13/server-test -f ./server/dockerfile.dev ./server
-  #     # - run: docker run -e CI=true oscardel13/react-test npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Docker Login
+      - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      # Build Client and run test
+      - run: docker build -t oscardel13/react-test -f ./client/dockerfile.dev ./client
+      - run: docker run -e CI=true oscardel13/react-test npm test
+      # Build Server and run test
+      # - run: docker build -t oscardel13/server-test -f ./server/dockerfile.dev ./server
+      # - run: docker run -e CI=true oscardel13/react-test npm test
 
-  #     # Build Production Images
-  #     - run: docker build -t oscardel13/oscarshub-client ./client
-  #     - run: docker build -t oscardel13/oscarshub-nginx ./nginx
-  #     - run: docker build -t oscardel13/oscarshub-server ./server
-  #     # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
+      # Build Production Images
+      - run: docker build -t oscardel13/oscarshub-client ./client
+      - run: docker build -t oscardel13/oscarshub-nginx ./nginx
+      - run: docker build -t oscardel13/oscarshub-server ./server
+      # - run: docker build -t oscardel13/multi-worker-3-9 ./worker
 
-  #     # Push Images to docker hub
-  #     - run: docker push oscardel13/oscarshub-client
-  #     - run: docker push oscardel13/oscarshub-nginx
-  #     - run: docker push oscardel13/oscarshub-server 
-  #     # - run: docker push oscardel13/multi-worker-3-9 l
+      # Push Images to docker hub
+      - run: docker push oscardel13/oscarshub-client
+      - run: docker push oscardel13/oscarshub-nginx
+      - run: docker push oscardel13/oscarshub-server 
+      # - run: docker push oscardel13/multi-worker-3-9 l
 
   deploy:
     # needs: build
     name: Upload to Amazon S3
     runs-on: ubuntu-latest
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
-    permissions:
-      id-token: write
-      contents: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: SSH into EC2 instance
+        uses: appleboy/ssh-action@master
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION}}
-      - name: Copy SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-      - name: Connect to EC2 instance using SSH client
-        run: ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_INSTANCE_IP }} -i ~/.ssh/id_rsa 'ls -la'
+          host: ${{ secrets.EC2_HOSTNAME }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # port: <your-ssh-port> # Optional, default is 22
+          command: 'ls -l' # Example command to run on the EC2 instance
+      - name: Test
+        run: mkdir test
