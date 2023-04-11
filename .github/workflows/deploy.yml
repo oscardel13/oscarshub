@@ -47,5 +47,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
-            docker ps
-
+            docker-compose down
+            docker-compose up --pull=true
