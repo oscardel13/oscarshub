@@ -53,6 +53,6 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        
+
     - name: Connect to EC2 instance using SSH client
-      run: ssh -o StrictHostKeyChecking=no <YOUR_EC2_INSTANCE_IP> -i ~/.ssh/id_rsa 'ls -la'
+      run: ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_INSTANCE_IP }} -i ~/.ssh/id_rsa 'ls -la'
