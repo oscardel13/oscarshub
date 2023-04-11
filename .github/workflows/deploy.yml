@@ -47,4 +47,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           command: |
-            docker ps
+            echo "Hello from the EC2 instance!"
+            docker-compose down
