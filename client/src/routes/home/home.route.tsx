@@ -4,6 +4,7 @@ import ResumeSection from './components/resume-section/resume-section.section';
 import ProjectSection from './components/project-section/project.section';
 
 import './home.styles.css'
+import ContactSession from './components/contact-section/contact.section';
 
 const Home = () =>{
     return(
@@ -12,6 +13,7 @@ const Home = () =>{
             <AboutSection/>
             <ResumeSection/>
             <ProjectSection/>
+            <ContactSession/>
         </>
     )
 }

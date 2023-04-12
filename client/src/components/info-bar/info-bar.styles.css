@@ -146,17 +146,6 @@
 
 }
 
-
-/* @media only screen and (max-width: 991.99px){
-    #info-bar{
-        background: #20202a;
-        width: 0%;
-        min-width: 0px;
-        visibility: hidden;
-
-    }  
-} */
-
 .socials a{
     color: inherit;
 }
@@ -164,7 +153,7 @@
 #closeInfoBar{
     color: #8c8c8e;
     position: absolute;
-    left: 93%;
+    left: 90%;
 }
 
 @media only screen and (min-width: 993px){

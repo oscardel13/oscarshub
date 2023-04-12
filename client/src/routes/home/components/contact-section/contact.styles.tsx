@@ -2,8 +2,9 @@ import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Card from 'react-bootstrap/Card';
 
-export const ProjectContainer = styled.section`
+export const ContactContainer = styled.section`
     padding-top: 100px;
+    padding-bottom: 15px;
     // height: 920px;
     padding-right: 20px;
     // text-align: center;
@@ -23,6 +24,6 @@ export const ProjectCard = styled(Card)`
     }
 `
 
-export const ProjectRow = styled(Row)`
+export const ContactRow = styled(Row)`
     padding-top: 40px;
 `

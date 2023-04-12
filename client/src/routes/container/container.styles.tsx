@@ -44,3 +44,13 @@ export const ContentContainer = styled(Col)<{hide: Boolean}>`
 export const ContentRow = styled(Row)`
     padding-top : 12px;
 `
+
+export const ContentFooter = styled(Row)`
+    position: relative;
+    width: 98%;
+    left: 1%;
+    padding: 4px;
+    z-index: 1020;
+    background: #20202a;
+    height: 50px;
+`

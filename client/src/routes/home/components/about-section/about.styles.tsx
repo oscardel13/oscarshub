@@ -3,7 +3,7 @@ import Image from 'react-bootstrap/Image'
 import styled from 'styled-components'
 
 export const AboutImage = styled(Image)`
-    width: 85%;
+    width: 95%;
 `
 
 export const AboutContainer = styled.section`

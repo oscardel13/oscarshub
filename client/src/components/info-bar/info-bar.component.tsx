@@ -68,9 +68,15 @@ const InfoBar = (props: {hide: () => void}) =>{
                             </div>
                         </Stack>
                         <Stack direction="horizontal">
-                            <h6>Age:</h6>
+                            <h6>Email:</h6>
                             <div className='ms-auto'>
-                                <small>25</small>
+                                <small>oscardel413@gmail.com</small>
+                            </div>
+                        </Stack>
+                        <Stack direction="horizontal">
+                            <h6>Phone:</h6>
+                            <div className='ms-auto'>
+                                <small>720-219-5293</small>
                             </div>
                         </Stack>
                     </div>

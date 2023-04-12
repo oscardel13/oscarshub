@@ -3,8 +3,8 @@ import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card';
 
 export const ResumeContainer = styled.section`
-    padding-top: 50px;
-    height: 940px;
+    padding-top: 100px;
+    // height: 940px;
     
     @media only screen and (max-width: 1200px){
         height: unset;
@@ -16,8 +16,11 @@ export const ResumeCard = styled(Card)`
     width: 85%;
     margin-top: 20px;
     margin-left: 10px;
+    border-radius: unset;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
 `
 
 export const ResumeRow = styled(Row)`
-    padding-top: 25px;
+    padding-top: 40px;
 `
