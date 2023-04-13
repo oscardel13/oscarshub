@@ -1,5 +1,5 @@
 import Stack from 'react-bootstrap/Stack';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import { InfoBarContentHardSkill } from './info-bar-hard-skill.styles';
 
 const HardSkill = (props: {name: String, percent: number}) =>{
     const { name, percent } = props
@@ -11,7 +11,7 @@ const HardSkill = (props: {name: String, percent: number}) =>{
                     <small>{percent}</small>
                 </div>
             </Stack>
-            <ProgressBar now={percent} />
+            <InfoBarContentHardSkill now={percent} />
         </div>
     )
 }

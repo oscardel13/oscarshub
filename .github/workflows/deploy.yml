@@ -33,7 +33,7 @@ jobs:
 
   deploy:
     needs: build
-    name: Upload to Amazon S3
+    name: Deploy to EC2 instance
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
