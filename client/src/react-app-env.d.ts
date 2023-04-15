@@ -6,6 +6,4 @@ declare module '*.svg' {
     export default src;
 }
 
-// declare '*/pdf'{
-
-// }
+declare module '*.pdf'

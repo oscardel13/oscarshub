@@ -6,7 +6,6 @@ import SwapMenu from "../../components/swap-menu/swap-menu.component";
 import Footer from "../../components/footer/foot.component";
 
 import { MainContainer, MainRow, InfoBarContainer, ContentContainer, ContentRow, ContentFooter } from './container.styles'
-import { Col } from "react-bootstrap";
 
 const AppContainer = () => {
     const [isHidden, setIsHidden] = useState(true)

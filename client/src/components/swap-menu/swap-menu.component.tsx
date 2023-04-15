@@ -7,6 +7,12 @@ import { ReactComponent as ProfileSVG } from '../../assets/profile.svg';
 import './swap-menu.styles.css'
 
 const SwapMenu = (props: {hide: ()=>void}) =>{
+    const nasaProjectClick = () => {
+        window.open("http://nasaproject.oscarshub.com/", "_blank")
+    }
+    const crwnClothingClick = () => {
+        window.open("http://crwnclothing.oscarshub.com/", "_blank")
+    }
     return (
         <Navbar collapseOnSelect expand="sm" bg="dark-blue" variant="dark" sticky='top'>
             <Container>
@@ -26,8 +32,8 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                 
                 </Nav>
                 <Nav>
-                <Nav.Link href="http://nasaproject.oscarshub.com/">Nasa Project</Nav.Link>
-                <Nav.Link eventKey={2} href="https://crwnclothing.oscarshub.com/">
+                <Nav.Link onClick={nasaProjectClick}>Nasa Project</Nav.Link>
+                <Nav.Link onClick={crwnClothingClick}>
                     Crwn Clothing
                 </Nav.Link>
                 </Nav>
