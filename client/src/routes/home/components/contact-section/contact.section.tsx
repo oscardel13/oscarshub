@@ -5,11 +5,14 @@ import { ContactContainer, ContactRow } from './contact.styles';
 import Col from 'react-bootstrap/Col';
 
 function ContactSession() {
-    // const httpGetInTouch = async () => {
-    //     try{
-    //         await fetch('oscarshub.com/v1')
-    //     }
-    // }
+    const httpGetInTouch = async () => {
+        try{
+            await fetch('https://oscarshub.com/api/v1/mail/getintouch')
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
 
   return (
     <ContactContainer>
