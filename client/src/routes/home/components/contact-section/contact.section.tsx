@@ -5,6 +5,12 @@ import { ContactContainer, ContactRow } from './contact.styles';
 import Col from 'react-bootstrap/Col';
 
 function ContactSession() {
+    // const httpGetInTouch = async () => {
+    //     try{
+    //         await fetch('oscarshub.com/v1')
+    //     }
+    // }
+
   return (
     <ContactContainer>
         <h1 style={{"textAlign":"center"}}>Contact <strong>Me</strong></h1>
