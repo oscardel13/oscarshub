@@ -5,11 +5,17 @@ services:
     build:
       context: ./server
       dockerfile: dockerfile.dev  
+    volumes:
+      - /app/node_modules
+      - ./server:/app
 
   client:
     build: 
       context: ./client
-      dockerfile: dockerfile
+      dockerfile: dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./client:/app
 
   nginx:
     restart: always

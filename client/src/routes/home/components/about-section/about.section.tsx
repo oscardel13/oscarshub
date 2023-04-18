@@ -22,7 +22,7 @@ const AboutSection = () => {
                         <p>
                             I started coding when I was 18 years old and started with C++. Throughout the years I've worked on various school and personal 
                             projects always working on learning new skills. I've been really getting in Full stack engineering but have a huge intrest and 
-                            Machine Learning Programing. I spend my free time working on 2 start ups, FitNxs and AI Olympics, spending time with my dog milo, 
+                            Machine Learning Programing. I spend my free time working on 2 start ups, FitNxs, spending time with my dog milo, 
                             and rock climbing.
                         </p>
                     </AboutText>

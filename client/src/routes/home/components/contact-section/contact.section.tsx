@@ -1,13 +1,35 @@
+import { useState, ChangeEvent } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 import { ContactContainer, ContactRow } from './contact.styles';
 import Col from 'react-bootstrap/Col';
 
+import { postAPI } from '../../../../utils/backend/api';
+
+const defaultFormFields = {
+    name: '',
+    email: '',
+    message: ''
+}
+
 function ContactSession() {
-    const httpGetInTouch = async () => {
+    const [formFields, setFormFields] = useState(defaultFormFields)
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = event.target;
+        
+        setFormFields({...formFields,[name]:value})
+    }
+
+    const clearFormFields = () =>{
+        setFormFields(defaultFormFields)
+    }
+
+    const handleSubmit = async () => {
         try{
-            await fetch('https://oscarshub.com/api/v1/mail/getintouch')
+            const res = await postAPI("/mail/getintouch", formFields)
+            console.log(res)
         }
         catch(err){
             console.log(err)
@@ -20,20 +42,20 @@ function ContactSession() {
         <ContactRow>
             <Col >
                 <h4>Get in touch</h4>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="form-name">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Name" required/>
+                        <Form.Control type="text" placeholder="Name" name='name' onChange={handleChange} required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="form-email">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" required/>
+                        <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="form-message" >
                         <Form.Label>Message</Form.Label>
-                        <Form.Control as="textarea" rows={10} placeholder="Enter message" required/>
+                        <Form.Control as="textarea" rows={10} placeholder="Enter message" name='message' onChange={handleChange} required/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
                     Submit
