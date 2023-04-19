@@ -30,22 +30,25 @@ function ContactSession() {
         setFormFields(defaultFormFields)
     }
 
+    const verify = () =>{
+            if (captchaRef && captchaRef.current){
+                let token = captchaRef.current.getValue()
+                if (token!="" && token != null)
+                    setFormFields({...formFields, token})
+        }
+    }
+
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try{
             if (captchaRef && captchaRef.current){
-                let token = captchaRef.current.getValue();
+                const res = await postAPI("/mail/getintouch", formFields)
+                console.log(res)
+                clearFormFields()
                 captchaRef.current.reset();
-                console.log(token != "")
-                if (token!="" && token != null){
-                    setFormFields({...formFields, token})
-                    const res = await postAPI("/mail/getintouch", formFields)
-                    console.log(res)
-                    // clearFormFields()
-                }
-                else{
-                    window.alert("ReCaptcha is Required")
-                }
+            }
+            else{
+                window.alert("ReCaptcha is Required")
             }            
         }
         catch(err){
@@ -75,7 +78,7 @@ function ContactSession() {
                         <Form.Control as="textarea" rows={10} placeholder="Enter message" name='message' onChange={handleChange} required/>
                     </Form.Group>
 
-                    <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} theme='light' ref={captchaRef}/>
+                    <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} theme='light' ref={captchaRef} onChange={verify}/>
 
                     <br/>
                     

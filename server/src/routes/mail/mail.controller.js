@@ -7,7 +7,7 @@ require("dotenv").config();
 async function httpGetInTouch(req, res){
     const { body } = req
     if (!body.name || !body.email || !body.message || !body.token){
-        return res.status(400).json({error:"missing parameters"})
+        return res.status(401).json({error:"missing parameters", body})
     }
     try{
         const recaptchaURL = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${body.token}`
