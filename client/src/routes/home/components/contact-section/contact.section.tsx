@@ -43,7 +43,6 @@ function ContactSession() {
         try{
             if (captchaRef && captchaRef.current){
                 const res = await postAPI("/mail/getintouch", formFields)
-                console.log(res)
                 clearFormFields()
                 captchaRef.current.reset();
             }
