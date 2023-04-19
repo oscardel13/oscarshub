@@ -6,6 +6,10 @@
     color: #8c8c8e;;
 }
 
+.nav-link:focus{
+    color: #8c8c8e
+}
+
 #mobileHide{
     /* display: none; */
     position: relative;

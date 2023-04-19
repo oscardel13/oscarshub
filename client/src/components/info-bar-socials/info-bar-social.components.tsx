@@ -8,19 +8,31 @@ import { ReactComponent as Docker } from '../../assets/docker.svg'
 import { InfoBarSocialsDiv } from './info-bar-socials.styles';
 
 const InfoBarSocials = () =>{
+    const linkedinClick = () => {
+        window.open("https://www.linkedin.com/in/oscardel13/", "_blank")
+    }
+    const githubClick = () => {
+        window.open("https://github.com/oscardel13", "_blank")
+    }
+    const stackoverflowClick = () => {
+        window.open("https://stackoverflow.com/users/14166743/oscar-delgado", "_blank")
+    }
+    const dockerClick = () => {
+        window.open("https://hub.docker.com/u/oscardel13", "_blank")
+    }
     return (
         <InfoBarSocialsDiv>
             <Stack direction="horizontal">
-                <a href='https://www.linkedin.com/in/oscardel13/'>
+                <a onClick={linkedinClick}>
                     <LinkedIn style={{fill: "#0077B5"}}/>
                 </a>
-                <a href="https://github.com/oscardel13">
+                <a onClick={githubClick}>
                     <GitHub/>
                 </a>
-                <a href='https://stackoverflow.com/users/14166743/oscar-delgado'>
+                <a onClick={stackoverflowClick}>
                     <StackOverFlow/>
                 </a>
-                <a href='https://hub.docker.com/u/oscardel13'>
+                <a onClick={dockerClick}>
                     <Docker/>
                 </a>
             </Stack>

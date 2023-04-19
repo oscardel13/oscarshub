@@ -8,13 +8,13 @@ import ContactSession from './components/contact-section/contact.section';
 
 const Home = () =>{
     return(
-        <>
+        <div>
             <HeroSection/>
             <AboutSection/>
             <ResumeSection/>
             <ProjectSection/>
             <ContactSession/>
-        </>
+        </div>
     )
 }
 

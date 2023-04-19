@@ -21,7 +21,7 @@ const AppContainer = () => {
                 </InfoBarContainer>               
                 <ContentContainer lg={9} xs={12} hide={isHidden}>
                     <SwapMenu hide={onHideEvent}/>
-                    <ContentRow>
+                    <ContentRow id="home">
                             <Outlet/>
                             
                     </ContentRow>  

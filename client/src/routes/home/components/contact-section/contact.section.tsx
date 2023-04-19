@@ -1,4 +1,6 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useRef, FormEvent } from 'react';
+import ReCAPTCHA from "react-google-recaptcha"
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -10,11 +12,13 @@ import { postAPI } from '../../../../utils/backend/api';
 const defaultFormFields = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    token: ''
 }
 
 function ContactSession() {
     const [formFields, setFormFields] = useState(defaultFormFields)
+    const captchaRef = useRef<ReCAPTCHA>(null)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target;
@@ -26,10 +30,23 @@ function ContactSession() {
         setFormFields(defaultFormFields)
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         try{
-            const res = await postAPI("/mail/getintouch", formFields)
-            console.log(res)
+            if (captchaRef && captchaRef.current){
+                let token = captchaRef.current.getValue();
+                captchaRef.current.reset();
+                console.log(token != "")
+                if (token!="" && token != null){
+                    setFormFields({...formFields, token})
+                    const res = await postAPI("/mail/getintouch", formFields)
+                    console.log(res)
+                    // clearFormFields()
+                }
+                else{
+                    window.alert("ReCaptcha is Required")
+                }
+            }            
         }
         catch(err){
             console.log(err)
@@ -39,7 +56,7 @@ function ContactSession() {
   return (
     <ContactContainer>
         <h1 style={{"textAlign":"center"}}>Contact <strong>Me</strong></h1>
-        <ContactRow>
+        <ContactRow id="contact">
             <Col >
                 <h4>Get in touch</h4>
                 <Form onSubmit={handleSubmit}>
@@ -57,24 +74,16 @@ function ContactSession() {
                         <Form.Label>Message</Form.Label>
                         <Form.Control as="textarea" rows={10} placeholder="Enter message" name='message' onChange={handleChange} required/>
                     </Form.Group>
+
+                    <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} theme='light' ref={captchaRef}/>
+
+                    <br/>
+                    
                     <Button variant="primary" type="submit">
                     Submit
                     </Button>
                 </Form>
                 </Col>
-                {/* <Col lg={6}>
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>
-                            <h6>Email:</h6>
-                            <span>oscardel413@gmail.com</span>
-                        </li>
-                        <li>
-                            <h6>Phone:</h6>
-                            <span>+1 720 219 5293</span>
-                        </li>
-                    </ul>
-                </Col> */}
         </ContactRow>
     </ContactContainer>
   );
