@@ -31,7 +31,7 @@ const ProjectSection = () => {
                 </Col>
                 <Col lg={4}>
                 <ProjectCard>
-                    <ProjectCard.Img variant="top" src={NasaProjectPicture} style={{backgroundColor : "#021114", padding: "60px"}}/>
+                    <ProjectCard.Img variant="top" src={NasaProjectPicture} style={{backgroundColor : "white" /*"#021114"*/, padding: "60px"}}/>
                     <ProjectCard.Body>
                     <ProjectCard.Title>Nasa Project</ProjectCard.Title>
                     <ProjectCard.Text>
