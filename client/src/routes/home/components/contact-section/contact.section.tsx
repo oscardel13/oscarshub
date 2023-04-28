@@ -14,13 +14,13 @@ const defaultFormFields = {
     name: '',
     email: '',
     message: '',
-    token: '',
-    success: 'none'
+    token: ''
 }
 
 function ContactSession() {
     const [formFields, setFormFields] = useState(defaultFormFields)
-    const { name, email, message, success } = formFields;
+    const [submitStatus, setSubmitStatus] = useState("none")
+    const { name, email, message } = formFields;
     const captchaRef = useRef<ReCAPTCHA>(null)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -43,13 +43,13 @@ function ContactSession() {
 
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setFormFields({...formFields, success:"loading"})
+        setSubmitStatus("loading")
         try{
             if (captchaRef && captchaRef.current){
                 const res = await postAPI("/mail/getintouch", formFields)
                 clearFormFields();
                 captchaRef.current.reset();
-                setFormFields({...formFields, success:"true"})
+                setSubmitStatus("true")
             }
             else{
                 window.alert("ReCaptcha is Required")
@@ -57,26 +57,26 @@ function ContactSession() {
         }
         catch(err){
             console.log(err)
-            setFormFields({...formFields, success:"false"})
+            setSubmitStatus("false")
         }
     }
 
     const submitFeedback = () => {
-        if (success == "false"){
+        if (submitStatus == "false"){
             return(
                 <Button variant="primary" type="submit">
                     <span style={{color:"red", fontWeight:"900"}}>  &#10008; </span>
                 </Button>
             )
         }
-        else if(success == "true"){
+        else if(submitStatus == "true"){
             return(
             <Button variant="primary" type="submit" disabled>
                 <span style={{color:"green", fontWeight:"900"}}>  &#10004; </span>
             </Button>
         )
         }
-        else if(success == "loading"){
+        else if(submitStatus == "loading"){
             return(
                 <Button variant="primary" type="submit" disabled>
                     <Spinner animation="border" />
@@ -117,7 +117,6 @@ function ContactSession() {
                     <br/>
                     
                     {submitFeedback()}
-                    
                     
                 </Form>
                 </Col>
