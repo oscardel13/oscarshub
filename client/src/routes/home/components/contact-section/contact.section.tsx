@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, useRef, FormEvent } from 'react';
 import ReCAPTCHA from "react-google-recaptcha"
 
+import Spinner from 'react-bootstrap/Spinner';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -13,11 +14,13 @@ const defaultFormFields = {
     name: '',
     email: '',
     message: '',
-    token: ''
+    token: '',
+    success: 'none'
 }
 
 function ContactSession() {
     const [formFields, setFormFields] = useState(defaultFormFields)
+    const { name, email, message, success } = formFields;
     const captchaRef = useRef<ReCAPTCHA>(null)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,11 +43,13 @@ function ContactSession() {
 
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setFormFields({...formFields, success:"loading"})
         try{
             if (captchaRef && captchaRef.current){
                 const res = await postAPI("/mail/getintouch", formFields)
-                clearFormFields()
+                clearFormFields();
                 captchaRef.current.reset();
+                setFormFields({...formFields, success:"true"})
             }
             else{
                 window.alert("ReCaptcha is Required")
@@ -52,7 +57,37 @@ function ContactSession() {
         }
         catch(err){
             console.log(err)
+            setFormFields({...formFields, success:"false"})
         }
+    }
+
+    const submitFeedback = () => {
+        if (success == "false"){
+            return(
+                <Button variant="primary" type="submit">
+                    <span style={{color:"red", fontWeight:"900"}}>  &#10008; </span>
+                </Button>
+            )
+        }
+        else if(success == "true"){
+            return(
+            <Button variant="primary" type="submit" disabled>
+                <span style={{color:"green", fontWeight:"900"}}>  &#10004; </span>
+            </Button>
+        )
+        }
+        else if(success == "loading"){
+            return(
+                <Button variant="primary" type="submit" disabled>
+                    <Spinner animation="border" />
+                </Button>
+            )
+        }
+        return(
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        )
     }
 
   return (
@@ -64,26 +99,26 @@ function ContactSession() {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="form-name">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Name" name='name' onChange={handleChange} required/>
+                        <Form.Control type="text" placeholder="Name" name='name' onChange={handleChange} value={name} required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="form-email">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} required/>
+                        <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} value={email} required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="form-message" >
                         <Form.Label>Message</Form.Label>
-                        <Form.Control as="textarea" rows={10} placeholder="Enter message" name='message' onChange={handleChange} required/>
+                        <Form.Control as="textarea" rows={10} placeholder="Enter message" name='message' onChange={handleChange} value={message} required/>
                     </Form.Group>
 
                     <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} theme='light' ref={captchaRef} onChange={verify}/>
 
                     <br/>
                     
-                    <Button variant="primary" type="submit">
-                    Submit
-                    </Button>
+                    {submitFeedback()}
+                    
+                    
                 </Form>
                 </Col>
         </ContactRow>
