@@ -49,8 +49,16 @@ export const InfoBarSocialsDiv = styled.div`
     }
     
     svg{
-        height: 50px;
+        height: 25px;
         width: 25px;
         fill: white;
     }
+`
+
+export const SvgBackground = styled.div`
+    border-radius: 25%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    background-color: white;
 `
