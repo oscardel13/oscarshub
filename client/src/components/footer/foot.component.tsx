@@ -7,7 +7,7 @@ const Footer = () =>{
         <Navbar collapseOnSelect expand="sm" bg="dark-blue" variant="dark" style={{height: '50px'}}>
             <Container>
             <small style={{color: '#8c8c8e'}}>2023 Oscar's Hub</small>
-            <small style={{color: '#8c8c8e'}}>Build by Oscar Delgado</small>           
+            <small style={{color: '#8c8c8e'}}>Built by Oscar Delgado</small>           
             </Container>
         </Navbar>
     )

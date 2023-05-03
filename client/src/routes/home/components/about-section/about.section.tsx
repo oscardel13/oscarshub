@@ -17,13 +17,13 @@ const AboutSection = () => {
                             About <strong>Me</strong>
                         </h2>
                         <p>
-                            A latino Software Engineer born in Kansas and raised in Colorado and Graduaded from University of Colorado Boulder
+                            Welcome to Oscar's Hub! I'm Oscar, a first-generation Mexican-American software engineer. I discovered my love for programming while studying at the University of Colorado Boulder, and since then, I've been constantly learning and exploring different sectors of the tech industry to expand my skillset.
                         </p>
                         <p>
-                            I started coding when I was 18 years old and started with C++. Throughout the years I've worked on various school and personal 
-                            projects always working on learning new skills. I've been really getting in Full stack engineering but have a huge intrest and 
-                            Machine Learning Programing. I spend my free time working on 2 start ups, FitNxs, spending time with my dog milo, 
-                            and rock climbing.
+                            I believe that having a deep understanding of different technologies is crucial for becoming a solution architect or holding a high leadership position. By learning about various sectors like cloud computing, cybersecurity, and machine learning, I can better understand how different technologies can work together to create robust, scalable, and secure software solutions.
+                        </p>
+                        <p>
+                            I am dedicated to building strong technical and soft skills, and I focus on consistently working on challenging projects, learning new skills, and taking care of my personal health and well-being. Check out my portfolio website to explore my past projects, skillset, and interests. Thanks for visiting, and I'm excited to share my journey with you!
                         </p>
                     </AboutText>
                 </Col>

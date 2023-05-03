@@ -13,7 +13,7 @@ export const AboutContainer = styled.section`
 `
 
 export const AboutText = styled.div`
-    padding-top: 25%;
+    padding-top: 5%;
     text-align: left;
 
     @media only screen and (max-width: 992px){
