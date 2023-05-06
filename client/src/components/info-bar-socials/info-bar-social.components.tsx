@@ -1,5 +1,7 @@
 import Stack from 'react-bootstrap/Stack';
 
+import { newTab } from "../../utils/repeated_functions/repearted_functions"
+
 import { ReactComponent as LinkedIn } from '../../assets/linkedin-3.svg'
 import { ReactComponent as GitHub } from '../../assets/github-1.svg'
 import { ReactComponent as StackOverFlow } from '../../assets/stack-overflow.svg'
@@ -8,9 +10,6 @@ import { ReactComponent as Docker } from '../../assets/docker.svg'
 import { InfoBarSocialsDiv, SvgBackground } from './info-bar-socials.styles';
 
 const InfoBarSocials = () =>{
-    const newTab = (url: string) => {
-        window.open(url, "_blank")
-    }
     return (
         <InfoBarSocialsDiv>
             <Stack direction="horizontal">

@@ -6,6 +6,7 @@ import NasaProjectPicture from '../../../../assets/nasa.png'
 
 import { ProjectContainer, ProjectRow, ProjectCard } from "./project.styles"
 
+import { newTab } from "../../../../utils/repeated_functions/repearted_functions"
 
 const ProjectSection = () => {
     return (
@@ -13,8 +14,8 @@ const ProjectSection = () => {
             <h1 style={{"textAlign":"center"}}>My <strong>Projects</strong></h1>
             <ProjectRow>
                 <Col lg={4}>
-                <ProjectCard onClick={"hell"}>
-                    <ProjectCard.Img variant="top" src={CrwnClothingPicture} style={{backgroundColor : "white", padding: "60px"}}/>
+                <ProjectCard>
+                    <ProjectCard.Img variant="top" src={CrwnClothingPicture} style={{backgroundColor : "white", padding: "60px", cursor:"pointer"}} onClick={()=>{newTab("https://crwnclothing.oscarshub.com/")}}/>
                     <ProjectCard.Body>
                     <ProjectCard.Title>Crwn Clothing</ProjectCard.Title>
                     <ProjectCard.Text>
@@ -28,7 +29,7 @@ const ProjectSection = () => {
                 </Col>
                 <Col lg={4}>
                 <ProjectCard>
-                    <ProjectCard.Img variant="top" src={NasaProjectPicture} style={{backgroundColor : "white" /*"#021114"*/, padding: "60px"}}/>
+                    <ProjectCard.Img variant="top" src={NasaProjectPicture} style={{backgroundColor : "white" /*"#021114"*/, padding: "60px",cursor:"pointer"}} onClick={()=>{newTab("https://nasaproject.oscarshub.com/")}}/>
                     <ProjectCard.Body>
                     <ProjectCard.Title>Nasa Project</ProjectCard.Title>
                     <ProjectCard.Text>
@@ -42,7 +43,7 @@ const ProjectSection = () => {
                 </Col>
                 <Col lg={4}>
                 <ProjectCard>
-                    <ProjectCard.Img variant="top" src={EmpowerCaninePicture} />
+                        <ProjectCard.Img variant="top" src={EmpowerCaninePicture} onClick={()=>(newTab("https://empowercanine.com/"))} style={{cursor:"pointer"}}/>
                     <ProjectCard.Body>
                     <ProjectCard.Title>Empower Canine</ProjectCard.Title>
                     <ProjectCard.Text>
