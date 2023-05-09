@@ -13,12 +13,12 @@ const InfoBarSocials = () =>{
     return (
         <InfoBarSocialsDiv>
             <Stack direction="horizontal">
-                <a onClick={()=>{newTab("https://github.com/oscardel13")}}>
+                <a onClick={()=>{newTab("https://www.linkedin.com/in/oscardel13/")}}>
                     <SvgBackground>
                         <LinkedIn style={{fill: "#0077B5"}}/>
                     </SvgBackground>
                 </a>
-                <a onClick={()=>{newTab("https://www.linkedin.com/in/oscardel13/")}}>
+                <a onClick={()=>{newTab("https://github.com/oscardel13")}}>
                     <GitHub/>
                 </a>
                 <a onClick={()=>{newTab("https://stackoverflow.com/users/14166743/oscar-delgado")}}>
