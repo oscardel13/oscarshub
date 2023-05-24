@@ -14,5 +14,8 @@
     "test": "npm test --prefix server && npm test --prefix client"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/sandbox": "^2.4.0"
+  }
 }

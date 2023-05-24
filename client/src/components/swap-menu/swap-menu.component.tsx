@@ -20,11 +20,12 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                 <SwapMenuNavBar.Toggle aria-controls="responsive-navbar-nav" />
                 <SwapMenuNavBar.Collapse id="responsive-navbar-nav">
                     <SwapMenuNav className="me-auto">
-                    <SwapMenuNav.Link href='#home'>Home</SwapMenuNav.Link>
-                    <SwapMenuNav.Link href="#resume-section">Resume</SwapMenuNav.Link>
-                    <SwapMenuNav.Link href="#project-section">Projects</SwapMenuNav.Link>
-                    <SwapMenuNav.Link href="#contact">Contact</SwapMenuNav.Link>
+                    <SwapMenuNav.Link href='/#home'>Home</SwapMenuNav.Link>
+                    <SwapMenuNav.Link href="/#resume-section">Resume</SwapMenuNav.Link>
+                    <SwapMenuNav.Link href="/#project-section">Projects</SwapMenuNav.Link>
+                    <SwapMenuNav.Link href="/#contact">Contact</SwapMenuNav.Link>
                     <SwapMenuNav.Link href="#blog">Blog</SwapMenuNav.Link>    
+                    <SwapMenuNav.Link href="/graphql">GraphQL</SwapMenuNav.Link>    
                     </SwapMenuNav>
                     <SwapMenuDropdown/>
                 </SwapMenuNavBar.Collapse>

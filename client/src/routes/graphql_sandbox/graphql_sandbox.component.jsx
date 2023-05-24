@@ -1,9 +1,9 @@
-import { Apollosandbox } from '@apollo/sandbox/react'
+import { OscarsHubSandbox } from "./graphql_sandbox.styles";
 
 export function EmbeddedSandBox(){
     return(
-        <Apollosandbox
-            initialEndpoint='http://localhost:8000/graphql'
+        <OscarsHubSandbox
+            initialEndpoint='https://oscarshub.com/api/graphql'
             includedCookies={false}
         />
     )
