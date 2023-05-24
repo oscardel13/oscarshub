@@ -1,4 +1,5 @@
 import Container from 'react-bootstrap/Container';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as ProfileSVG } from '../../assets/profile.svg';
 
@@ -25,7 +26,9 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                     <SwapMenuNav.Link href="/#project-section">Projects</SwapMenuNav.Link>
                     <SwapMenuNav.Link href="/#contact">Contact</SwapMenuNav.Link>
                     <SwapMenuNav.Link href="#blog">Blog</SwapMenuNav.Link>    
-                    <SwapMenuNav.Link href="/graphql">GraphQL</SwapMenuNav.Link>    
+                    <SwapMenuNav.Link>
+                        <Link to='/graphql'>graphql</Link>    
+                    </SwapMenuNav.Link>    
                     </SwapMenuNav>
                     <SwapMenuDropdown/>
                 </SwapMenuNavBar.Collapse>
