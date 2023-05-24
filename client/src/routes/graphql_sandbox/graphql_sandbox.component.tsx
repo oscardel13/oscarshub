@@ -4,7 +4,7 @@ export function EmbeddedSandBox(){
     return(
         <OscarsHubSandbox
             initialEndpoint='https://oscarshub.com/api/graphql'
-            includedCookies={false}
+            // includedCookies={false}
         />
     )
 }
