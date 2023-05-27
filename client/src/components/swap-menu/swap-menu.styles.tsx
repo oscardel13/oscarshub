@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import Nav from 'react-bootstrap/Nav';
+import styled from "styled-components";
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 
 export const SwapMenuNavBar = styled(Navbar)`
@@ -25,5 +26,17 @@ export const SwapMenuNav = styled(Nav)`
 
     :focus{
         color: #8c8c8e
+    }
+`
+export const SwapMenuRouterLink = styled(Link)`
+    color: var(--bs-nav-link-color);
+    display: block;
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+
+    :hover{
+        color: var(--bs-nav-link-hover-color);
     }
 `

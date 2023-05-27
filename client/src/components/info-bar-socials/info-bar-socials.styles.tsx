@@ -62,3 +62,7 @@ export const SvgBackground = styled.div`
     display: flex;
     background-color: white;
 `
+
+export const SvgContainer = styled.a`
+    cursor: pointer;
+`

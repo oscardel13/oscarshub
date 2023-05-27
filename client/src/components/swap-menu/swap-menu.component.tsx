@@ -1,11 +1,11 @@
 import Container from 'react-bootstrap/Container';
-import { Link } from 'react-router-dom';
+
 
 import { ReactComponent as ProfileSVG } from '../../assets/profile.svg';
 
 import SwapMenuDropdown from '../swap-menu-dropdown/swap-menu-dropdown.component';
 
-import { SwapMenuNav, SwapMenuNavBar, SwapMenuInfoBarButton } from './swap-menu.styles';
+import { SwapMenuNav, SwapMenuNavBar, SwapMenuInfoBarButton, SwapMenuRouterLink } from './swap-menu.styles';
 
 
 const SwapMenu = (props: {hide: ()=>void}) =>{
@@ -27,7 +27,7 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                     <SwapMenuNav.Link href="/#contact">Contact</SwapMenuNav.Link>
                     <SwapMenuNav.Link href="#blog">Blog</SwapMenuNav.Link>    
                     <SwapMenuNav.Link>
-                        <Link to='/graphql'>graphql</Link>    
+                        <SwapMenuRouterLink to='/graphql'>GraphQL</SwapMenuRouterLink>    
                     </SwapMenuNav.Link>    
                     </SwapMenuNav>
                     <SwapMenuDropdown/>
