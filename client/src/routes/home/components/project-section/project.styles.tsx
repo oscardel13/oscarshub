@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 export const ProjectContainer = styled.section`
     padding-top: 100px;
@@ -21,8 +22,13 @@ export const ProjectCard = styled(Card)`
         border-top-left-radius: unset;
         border-top-right-radius: unset;
     }
+
+    .btn{
+        width: 100%
+    }
 `
 
 export const ProjectRow = styled(Row)`
     padding-top: 40px;
 `
+
