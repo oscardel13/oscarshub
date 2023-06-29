@@ -24,7 +24,7 @@ export const ProjectCard = styled(Card)`
     }
 
     .btn{
-        width: 100%
+        width: 100%;
     }
 `
 
