@@ -16,10 +16,10 @@ const AppContainer = () => {
     return (
         <MainContainer>
             <MainRow>           
-                <InfoBarContainer lg={3} xs={0} id="InfoBar" hide={isHidden}>
+                <InfoBarContainer lg={3} xs={0} id="InfoBar" hide={isHidden.toString()}>
                         <InfoBar hide={onHideEvent}/>
                 </InfoBarContainer>               
-                <ContentContainer lg={9} xs={12} hide={isHidden}>
+                <ContentContainer lg={9} xs={12} hide={isHidden.toString()}>
                     <SwapMenu hide={onHideEvent}/>
                     <ContentRow id="home">
                             <Outlet/>

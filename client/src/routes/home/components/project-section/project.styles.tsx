@@ -5,9 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 export const ProjectContainer = styled.section`
     padding-top: 100px;
-    // height: 920px;
     padding-right: 20px;
-    // text-align: center;
     @media only screen and (max-width: 1200px){
         height: unset;
     }
@@ -17,7 +15,16 @@ export const ProjectCard = styled(Card)`
     // width: 85%;
     margin-top: 20px;
     border-radius: unset;
-    
+    .h5{
+        color: wheat;
+    }
+
+    small{
+        color: grey;
+    }
+    p{
+        color: aliceblue;
+    }
     .card-img-top{
         border-top-left-radius: unset;
         border-top-right-radius: unset;

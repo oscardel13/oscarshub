@@ -25,7 +25,7 @@ const SwapMenu = (props: {hide: ()=>void}) =>{
                     <SwapMenuNav.Link href="/#resume-section">Resume</SwapMenuNav.Link>
                     <SwapMenuNav.Link href="/#project-section">Projects</SwapMenuNav.Link>
                     <SwapMenuNav.Link href="/#contact">Contact</SwapMenuNav.Link>
-                    <SwapMenuNav.Link href="#blog">Blog</SwapMenuNav.Link>    
+                    {/* <SwapMenuNav.Link href="#blog">Blog</SwapMenuNav.Link>     */}
                     <SwapMenuNav.Link>
                         <SwapMenuRouterLink to='/graphql'>GraphQL</SwapMenuRouterLink>    
                     </SwapMenuNav.Link>    

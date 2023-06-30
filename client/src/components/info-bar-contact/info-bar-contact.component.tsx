@@ -18,13 +18,13 @@ const InfoBarContact = () => {
                 <Stack direction="horizontal">
                     <h6>Email:</h6>
                     <div className='ms-auto'>
-                        <small>oscardel413@gmail.com</small>
+                        <small>oscardel0413@gmail.com</small>
                     </div>
                 </Stack>
                 <Stack direction="horizontal">
                     <h6>Phone:</h6>
                     <div className='ms-auto'>
-                        <small>720-219-5293</small>
+                        <small>719-408-0055</small>
                     </div>
                 </Stack>
             </div>

@@ -19,6 +19,16 @@ export const ResumeCard = styled(Card)`
     border-radius: unset;
     border-top-left-radius: unset;
     border-top-right-radius: unset;
+    .h5{
+        color: wheat;
+    }
+
+    .text-muted {
+        color: grey !important;
+    }
+    p{
+        color: aliceblue;
+    }
 `
 
 export const ResumeRow = styled(Row)`
