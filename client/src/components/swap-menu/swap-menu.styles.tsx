@@ -11,6 +11,7 @@ export const SwapMenuInfoBarButton = styled.a`
     position: relative;
     right: 15px;
     color: #8c8c8e;
+    cursor: pointer;
     @media only screen and (min-width: 993px){
         display: none;
     }

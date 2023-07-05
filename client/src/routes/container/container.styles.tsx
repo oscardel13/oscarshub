@@ -21,12 +21,12 @@ export const MainRow = styled(Row)`
     height: 100%;
 `
 
-export const InfoBarContainer = styled(Col)<{hide: Boolean}>`
+export const InfoBarContainer = styled(Col)<{hide: string}>`
     padding-left: 0; 
     height: 100%;
     transition: 0.5s ease-in-out 0.5s;
     @media only screen and (max-width: 992px){
-        ${props => (props.hide ? {"display":"none"}: {"display":"contents"} )};
+        ${props => (props.hide === 'true' ? {"display":"none"}: {"display":"contents"} )};
 
     }
 `

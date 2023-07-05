@@ -5,7 +5,6 @@ import oscarResume from '../../assets/OscarsResume.pdf'
 const InfoBarCV = () => {
     return (
         <InfoBarCVDiv>
-            {/* <a onClick={onButtonClick}>&#10233; DOWNLOAD CV &#10232;</a> */}
             <a href={oscarResume} download="OscarsResume">&#10233; DOWNLOAD CV &#10232;</a>
         </InfoBarCVDiv>
     )

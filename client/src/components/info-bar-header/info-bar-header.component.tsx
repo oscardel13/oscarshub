@@ -9,7 +9,7 @@ const InfoBarHeader = (props: {hide: () => void}) =>{
     return (
         <InfoBarHeaderDiv>
             <InfoBarHeaderCloseButtonContainer onClick={props.hide}>
-                <CloseButton variant="white"/>
+                <CloseButton onClick={props.hide} variant="white"/>
             </InfoBarHeaderCloseButtonContainer>
             <InfoBarHeaderAvatar>
                 <Image roundedCircle src={profilePicture}></Image>
