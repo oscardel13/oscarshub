@@ -10,10 +10,11 @@ import { ProjectContainer, ProjectRow, ProjectCard } from "./project.styles"
 
 import { newTab } from "../../../../utils/repeated_functions/repearted_functions"
 
+//TODO Needs updating
 const ProjectSection = () => {
     return (
         <ProjectContainer id='project-section'>
-            <h1 style={{"textAlign":"center"}}>My <strong>Projects</strong></h1>
+            <h1 style={{"textAlign":"center"}}>Past <strong>Projects</strong></h1>
             <ProjectRow>
                 <Col lg={4}>
                 <ProjectCard>

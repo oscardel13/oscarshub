@@ -2,14 +2,14 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import { AboutImage, AboutContainer, AboutText } from "./about.styles"
 
-import ProfilePicture from '../../../../assets/profile-2.jpg'
+import ProfilePicture from '../../../../assets/Hattori.png'
 
 const AboutSection = () => {
     return (
         <AboutContainer id="about-section">
-            <Row>
+            <Row className="align-items-center">
                 <Col lg={6}>
-                    <AboutImage src={ProfilePicture}/>
+                    <AboutImage src={ProfilePicture} style={{width: "70%"}}/>
                 </Col>
                 <Col lg={6}>
                     <AboutText>

@@ -12,7 +12,7 @@ const InfoBarHeader = (props: {hide: () => void}) =>{
                 <CloseButton onClick={props.hide} variant="white"/>
             </InfoBarHeaderCloseButtonContainer>
             <InfoBarHeaderAvatar>
-                <Image roundedCircle src={profilePicture}></Image>
+                <Image roundedCircle src={"https://lh3.googleusercontent.com/a/ACg8ocIVJK-K4PsuRTyVLfagTUr5IkhxpG-O_L2MTsHHnPdi89Y=s96-c"}></Image>
             </InfoBarHeaderAvatar>
             <div className="name">
                 <h5>Oscar Delgado</h5>

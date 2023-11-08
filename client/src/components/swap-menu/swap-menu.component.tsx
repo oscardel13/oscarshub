@@ -1,12 +1,10 @@
 import Container from 'react-bootstrap/Container';
 
-
 import { ReactComponent as ProfileSVG } from '../../assets/profile.svg';
 
 import SwapMenuDropdown from '../swap-menu-dropdown/swap-menu-dropdown.component';
 
 import { SwapMenuNav, SwapMenuNavBar, SwapMenuInfoBarButton, SwapMenuRouterLink } from './swap-menu.styles';
-
 
 const SwapMenu = (props: {hide: ()=>void}) =>{
     
