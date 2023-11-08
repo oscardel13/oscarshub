@@ -17,13 +17,13 @@ const AboutSection = () => {
                             About <strong>Me</strong>
                         </h2>
                         <p>
-                            Welcome to Oscar's Hub! I'm Oscar, a first-generation Mexican-American software engineer. I discovered my love for programming while studying at the University of Colorado Boulder, and since then, I've been constantly learning and exploring different sectors of the tech industry to expand my skillset.
+                        Hey there! I'm Oscar, a first-generation Mexican-American software engineer. I fell in love with coding during my time at the University of Colorado Boulder, and I've been on a never-ending adventure of tech exploration ever since.
                         </p>
                         <p>
-                            I believe that having a deep understanding of different technologies is crucial for becoming a solution architect or holding a high leadership position. By learning about various sectors like cloud computing, cybersecurity, and machine learning, I can better understand how different technologies can work together to create robust, scalable, and secure software solutions.
+                        I firmly believe that becoming well-versed in full-stack development, DevOps, and cloud technologies empowers me to create robust, scalable, and secure software solutions. I'm all about building my tech skills and well-being. Challenging projects, continuous learning, and self-care are my jam.
                         </p>
                         <p>
-                            I am dedicated to building strong technical and soft skills, and I focus on consistently working on challenging projects, learning new skills, and taking care of my personal health and well-being. Check out my portfolio website to explore my past projects, skillset, and interests. Thanks for visiting, and I'm excited to share my journey with you!
+                        Explore my world of projects, skills, and interests on my portfolio site. Thanks for stopping by – I can't wait to share my journey with you!
                         </p>
                     </AboutText>
                 </Col>

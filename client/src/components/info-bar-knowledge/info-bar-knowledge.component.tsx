@@ -10,19 +10,27 @@ const InfoBarKnowledge = () =>{
                 </Stack>
                 <Stack direction="horizontal" gap={3}>
                     <span>&#10003;</span>
-                    <small> Git and Github</small>  
+                    <small> Git, Github, Github Actions</small>  
                 </Stack>
                 <Stack direction="horizontal" gap={3}>
                     <span>&#10003;</span>
-                    <small>AWS and GCP knowledge</small>  
+                    <small>AWS: EC2, ALB, Route 53, SQS, S3, Cloudfront, Lambda, API Gateway</small>  
                 </Stack>
                 <Stack direction="horizontal" gap={3}>
                     <span>&#10003;</span>
-                    <small> CI/CD Pipeline</small>  
+                    <small> Continuous Integration / Continuous Deployment</small>  
                 </Stack>
                 <Stack direction="horizontal" gap={3}>
                     <span>&#10003;</span>
-                    <small> Bootstrap</small>  
+                    <small> Tailwind</small>  
+                </Stack>
+                <Stack direction="horizontal" gap={3}>
+                    <span>&#10003;</span>
+                    <small> API and Rest API</small>  
+                </Stack>
+                <Stack direction="horizontal" gap={3}>
+                    <span>&#10003;</span>
+                    <small> Unit Testing</small>  
                 </Stack>
             </Stack>
         </div>
