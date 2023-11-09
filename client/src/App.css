@@ -3,16 +3,46 @@
     background-position: 0;
   }
   100% {
-    background-position: 100%;
+    background-position: 2000%;
   }
 }
 
 #root {
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/099/717/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg);
-  background-size: 130% 100%; /* Double the width to accommodate seamless movement */
+  background-repeat: repeat-x;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   min-height: 100vh;
-  animation: moveBackground 10s linear infinite; /* Adjust the duration as needed */
+}
+
+@media (max-width: 640px) {
+  #root {
+    background-size: 200% 100%; /* Adjust the background size for xs screens */
+    animation: moveBackground 180s linear infinite; /* Adjust the animation duration for xs screens */
+  }
+}
+
+/* Media query for small (sm) screens */
+@media (min-width: 641px) and (max-width: 767px) {
+  #root {
+    background-size: 175% 100%; /* Adjust the background size for sm screens */
+    animation: moveBackground 120s linear infinite; /* Adjust the animation duration for sm screens */
+  }
+}
+
+/* Media query for medium (md) screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #root {
+    background-size: 150% 100%; /* Adjust the background size for md screens */
+    animation: moveBackground 120s linear infinite; /* Adjust the animation duration for md screens */
+  }
+}
+
+/* Media query for large (lg) screens */
+@media (min-width: 1024px) {
+  #root {
+    background-size: 110% 100%; /* Adjust the background size for lg screens */
+    animation: moveBackground 120s linear infinite; /* Adjust the animation duration for lg screens */
+  }
 }
 
 .App {
