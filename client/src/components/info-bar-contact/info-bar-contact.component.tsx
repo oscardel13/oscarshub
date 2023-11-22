@@ -18,7 +18,7 @@ const InfoBarContact = () => {
                 <Stack direction="horizontal">
                     <h6>Email:</h6>
                     <div className='ms-auto'>
-                        <small>oscardel0413@gmail.com</small>
+                        <small>oscar@oscarshub.com</small>
                     </div>
                 </Stack>
                 <Stack direction="horizontal">
