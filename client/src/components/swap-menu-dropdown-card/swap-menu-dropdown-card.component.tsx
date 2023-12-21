@@ -1,5 +1,5 @@
 import Col from 'react-bootstrap/Col'
-import { SwapMenuCard, SwapMenuCardBody, SwapMenuRow, SwapMenuCardImg } from "./swap-menu-dropdown-card"
+import { SwapMenuCard, SwapMenuCardBody, SwapMenuRow, SwapMenuCardImg } from "./swap-menu-dropdown-card.styles"
 
 
 const SwapMenuDropDownCard = (props: {img: string, title: string, whiteBackground: boolean}) => {

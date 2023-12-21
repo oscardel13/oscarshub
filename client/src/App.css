@@ -7,6 +7,10 @@
   }
 }
 
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
 #root {
   background-image: url(https://static.vecteezy.com/system/resources/previews/002/099/717/original/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg);
   background-repeat: repeat-x;
@@ -47,6 +51,7 @@
 
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -86,5 +91,13 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 1024px){
+  .hidden{
+    display: none
+  }
+  .scrolling-disable{
+    overflow-y: hidden;
   }
 }

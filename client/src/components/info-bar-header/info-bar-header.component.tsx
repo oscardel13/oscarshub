@@ -1,28 +1,22 @@
-import Image from 'react-bootstrap/Image'
-import CloseButton from 'react-bootstrap/CloseButton';
-
-import { InfoBarHeaderDiv, InfoBarHeaderAvatar, InfoBarHeaderCloseButtonContainer } from './info-bar-header.styles';
-
-import profilePicture from '../../assets/oscar.jpg'
-
 const InfoBarHeader = (props: {hide: () => void}) =>{
     return (
-        <InfoBarHeaderDiv>
-            <InfoBarHeaderCloseButtonContainer onClick={props.hide}>
-                <CloseButton onClick={props.hide} variant="white"/>
-            </InfoBarHeaderCloseButtonContainer>
-            <InfoBarHeaderAvatar>
-                <Image roundedCircle src={"https://lh3.googleusercontent.com/a/ACg8ocIVJK-K4PsuRTyVLfagTUr5IkhxpG-O_L2MTsHHnPdi89Y=s96-c"}></Image>
-            </InfoBarHeaderAvatar>
-            <div className="name">
+        <div className='flex flex-col justify-center text-center h-60 py-5'>
+            <span onClick={props.hide} className='absolute left-[90%] fill-white lg:hidden'>
+                &#10006;
+            </span>
+            <div className='flex justify-center'> 
+                <img className='w-24 h-24 rounded-full' src={"https://lh3.googleusercontent.com/a/ACg8ocIVJK-K4PsuRTyVLfagTUr5IkhxpG-O_L2MTsHHnPdi89Y=s96-c"}/>
+            </div>
+            <br/>
+            <div className="text-white">
                 <h5>Oscar Delgado</h5>
             </div>
-            <div className="description">
+            <div className="text-gray-400">
                 <small>Software Engineer</small>
                 <br/>
                 <small>Full Stack Engineer</small>
             </div>
-        </InfoBarHeaderDiv>
+        </div>
     )
 }
 

@@ -1,30 +1,27 @@
-import Col from 'react-bootstrap/Col'
 import EducationSection from '../education-section/education.section';
 import CertificateSection from '../certificates-section/certificates.section';
 import ExperienceSection from '../experience-section/experience.section';
 
-import { ResumeContainer, ResumeRow } from "./resume-section.styles"
-
 const ResumeSection = () => {
     return (
-        <ResumeContainer id='resume-section'>
+        <section id='resume-section' className='py-5'>
             <h1 style={{"textAlign":"center"}}>My <strong>Resume</strong></h1>
-            <ResumeRow>
-                <Col lg={6}>
-                    <ResumeRow>
+            <div className='flex flex-col md:flex-row gap-5 pt-10'>
+                <div className='flex flex-col'>
+                    <div className='pt-10'>
                         <EducationSection/>
-                    </ResumeRow>
-                    <ResumeRow>
+                    </div>
+                    <div className='pt-10'>
                         <CertificateSection/>
-                    </ResumeRow>
-                </Col>
-                <Col lg={6}>
-                    <ResumeRow>
+                    </div>
+                </div>
+                <div className='flex flex-col'>
+                    <div className='pt-10'>
                         <ExperienceSection/>
-                    </ResumeRow>
-                </Col>
-            </ResumeRow>
-        </ResumeContainer>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 

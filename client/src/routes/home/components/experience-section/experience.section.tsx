@@ -1,40 +1,28 @@
-import { ResumeCard } from '../resume-section/resume-section.styles';
+import ResumeCard from '../../../../components/resume-card/resume-card.component'
 
 const ExperienceSection = () => {
     return (
-        <>
+        <div className='flex flex-col gap-3'>
             <h4>Experience</h4>
-            <ResumeCard>
-                <ResumeCard.Body>
-                    <ResumeCard.Title>FitNxs</ResumeCard.Title>
-                    <ResumeCard.Subtitle className="mb-2 text-muted">Software Engineer</ResumeCard.Subtitle>
-                    <ResumeCard.Text>
-                        Develop a modern web application using Django, JavaScript deployed on GCP.
-                    </ResumeCard.Text>
-                    <small className="text-muted">January 2021 - Oct 2022</small>
-                </ResumeCard.Body>
-            </ResumeCard>
-            <ResumeCard>
-                <ResumeCard.Body>
-                    <ResumeCard.Title>CPCyber</ResumeCard.Title>
-                    <ResumeCard.Subtitle className="mb-2 text-muted">Software Engineer</ResumeCard.Subtitle>
-                    <ResumeCard.Text>
-                        Maintain two internal web applications using Django.
-                    </ResumeCard.Text>
-                    <small className="text-muted">August 2021 - July 2022</small>
-                </ResumeCard.Body>
-            </ResumeCard>
-            <ResumeCard>
-                <ResumeCard.Body>
-                    <ResumeCard.Title>University of Colorado at Boulder</ResumeCard.Title>
-                    <ResumeCard.Subtitle className="mb-2 text-muted">Student Software Engineer</ResumeCard.Subtitle>
-                    <ResumeCard.Text>
-                         Automate web forms using Selenium in C#
-                    </ResumeCard.Text>
-                    <small className="text-muted">August 2017 - December 2019</small>
-                </ResumeCard.Body>
-            </ResumeCard>
-        </>
+            <ResumeCard
+                title='FitNxs'
+                subtitle='Software Engineer'
+                description='Develop a modern web application using Django, JavaScript deployed on GCP.'
+                dates='January 2021 - Oct 2022'
+            />
+            <ResumeCard
+                title='CPCyber'
+                subtitle='Software Engineer'
+                description='Maintain two internal web applications using Django.'
+                dates='August 2021 - July 2022'
+            />
+            <ResumeCard
+                title='University of Colorado at Boulder'
+                subtitle='Student Software Engineer'
+                description='Automate web forms using Selenium in C#'
+                dates='August 2017 - December 2019'
+            />
+        </div>
     )
 }
 

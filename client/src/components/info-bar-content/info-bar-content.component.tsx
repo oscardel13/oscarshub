@@ -3,13 +3,9 @@ import InfoBarContact from '../info-bar-contact/info-bar-contact.component';
 import InfoBarHardSkills from '../info-bar-hard-skills/info-bar-hard-skills.component';
 import InfoBarCV from '../info-bar-cv/info-bar-cv.component';
 
-import { InfoBarContentScrollDiv } from './info-bar-content.styles';
-
-
 const InfoBarContent = () =>{
     return(
-        <InfoBarContentScrollDiv>
-
+        <div className='p-4 overflow-y-auto text-white'>
             <InfoBarContact/>
             <hr />
             <InfoBarHardSkills/>
@@ -17,8 +13,7 @@ const InfoBarContent = () =>{
             <InfoBarKnowledge/>
             <hr/>
             <InfoBarCV/>   
-
-        </InfoBarContentScrollDiv>
+        </div>
     )
 }
 

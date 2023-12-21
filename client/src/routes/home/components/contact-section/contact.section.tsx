@@ -1,13 +1,6 @@
 import { useState, ChangeEvent, useRef, FormEvent } from 'react';
 import ReCAPTCHA from "react-google-recaptcha"
 
-import Spinner from 'react-bootstrap/Spinner';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
-import { ContactContainer, ContactRow } from './contact.styles';
-import Col from 'react-bootstrap/Col';
-
 import { postAPI } from '../../../../utils/backend/api';
 
 const defaultFormFields = {
@@ -23,7 +16,7 @@ function ContactSession() {
     const { name, email, message } = formFields;
     const captchaRef = useRef<ReCAPTCHA>(null)
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
         const {name, value} = event.target;
         
         setFormFields({...formFields,[name]:value})
@@ -64,64 +57,89 @@ function ContactSession() {
     const submitFeedback = () => {
         if (submitStatus == "false"){
             return(
-                <Button variant="primary" type="submit">
+                <button className='flex justify-center items-center bg-[rgb(26,17,65)] hover:bg-[rgb(87,69,167)] w-3/6 text-white px-3 py-2 rounded-md h-16' type='submit'>
                     <span style={{color:"red", fontWeight:"900"}}>  &#10008; </span>
-                </Button>
+                </button>
             )
         }
         else if(submitStatus == "true"){
             return(
-            <Button variant="primary" type="submit" disabled>
+            <button className='flex justify-center items-center bg-[rgb(26,17,65)] hover:bg-[rgb(87,69,167)] w-3/6 text-white px-3 py-2 rounded-md h-16' disabled>
                 <span style={{color:"green", fontWeight:"900"}}>  &#10004; </span>
-            </Button>
+            </button>
         )
         }
         else if(submitStatus == "loading"){
             return(
-                <Button variant="primary" type="submit" disabled>
-                    <Spinner animation="border" />
-                </Button>
+                <button className='flex justify-center items-center bg-[rgb(26,17,65)] hover:bg-[rgb(87,69,167)] w-3/6 text-white px-3 py-2 rounded-md h-16' disabled>
+                    <span className='animate-bounce'>Loading . . . .</span>
+                </button>
             )
         }
         return(
-            <Button variant="primary" type="submit">
+            <button className='flex justify-center items-center bg-[rgb(26,17,65)] hover:bg-[rgb(87,69,167)] w-3/6 text-white px-3 py-2 rounded-md h-16'>
                 Submit
-            </Button>
+            </button>
         )
     }
 
   return (
-    <ContactContainer>
+    <section className='pt-' id="contact">
         <h1 style={{"textAlign":"center"}}>Contact <strong>Me</strong></h1>
-        <ContactRow id="contact">
-            <Col >
-                <h4>Get in touch</h4>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3" controlId="form-name">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Name" name='name' onChange={handleChange} value={name} required/>
-                    </Form.Group>
+        <div className='pt-10'>
+            <h4>Get in touch</h4>
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="mb-4">
+                    <label htmlFor="form-name" className="block text-sm font-medium text-[wheat]">Name</label>
+                    <input 
+                    type="text" 
+                    id="form-name" 
+                    name="name" 
+                    placeholder="Name" 
+                    onChange={handleChange} 
+                    value={name} 
+                    required 
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                    />
+                </div>
 
-                    <Form.Group className="mb-3" controlId="form-email">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleChange} value={email} required/>
-                    </Form.Group>
+                <div className="mb-4">
+                    <label htmlFor="form-email" className="block text-sm font-medium text-[wheat]">Email address</label>
+                    <input 
+                    type="email" 
+                    id="form-email" 
+                    name="email" 
+                    placeholder="Enter email" 
+                    onChange={handleChange} 
+                    value={email} 
+                    required 
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                    />
+                </div>
 
-                    <Form.Group className="mb-3" controlId="form-message" >
-                        <Form.Label>Message</Form.Label>
-                        <Form.Control as="textarea" rows={10} placeholder="Enter message" name='message' onChange={handleChange} value={message} required/>
-                    </Form.Group>
+                <div className="mb-4">
+                    <label htmlFor="form-message" className="block text-sm font-medium text-[wheat]">Message</label>
+                    <textarea 
+                    id="form-message" 
+                    name="message" 
+                    rows={10} 
+                    placeholder="Enter message" 
+                    onChange={handleChange} 
+                    value={message} 
+                    required 
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-black"
+                    />
+                </div>
 
-                    <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} theme='light' ref={captchaRef} onChange={verify}/>
+                <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} theme='light' ref={captchaRef} onChange={verify}/>
 
-                    <br/>
-                    
-                    {submitFeedback()}
-                    
-                </Form>
-                </Col>
-        </ContactRow>
-    </ContactContainer>
+                <br/>
+
+                {submitFeedback()}
+
+            </form>
+        </div>
+    </section>
   );
 }
 

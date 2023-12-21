@@ -1,4 +1,3 @@
-import Stack from 'react-bootstrap/Stack';
 import HardSkill from '../info-bar-hard-skill/info-bar-hard-skill.component';
 import { useEffect, useState } from 'react';
 
@@ -38,15 +37,16 @@ const InfoBarHardSkills = () => {
         setTimeout(()=>setSkills(hardSkills),600)   
     },[])
     return (
-        <div className="hard skills">
+        <div className="hard skills pb-2">
             <h3>Languages</h3>
-            <Stack gap={3}>
+            <br/>
+            <div className='flex flex-col gap-4'>
                 {
                     skills.map((skill) => 
                     <HardSkill name={skill.name} percent={skill.percent}/>
                     )
                 }                
-            </Stack>
+            </div>
         </div>
     )
 }
