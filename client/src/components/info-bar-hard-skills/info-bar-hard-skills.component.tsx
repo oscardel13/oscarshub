@@ -43,7 +43,7 @@ const InfoBarHardSkills = () => {
             <div className='flex flex-col gap-4'>
                 {
                     skills.map((skill) => 
-                    <HardSkill name={skill.name} percent={skill.percent}/>
+                    <HardSkill key={skill.name} name={skill.name} percent={skill.percent}/>
                     )
                 }                
             </div>

@@ -17,9 +17,9 @@ const AppContainer = () => {
                 <div className={`h-full ease-in-out ${isHidden ? 'hidden' : 'absolute w-screen h-screen top-0 left-0 right-0 bottom-0 scrolling-disable mb-5'} lg:h-full lg:relative lg:max-w-96`}>
                         <InfoBar hide={onHideEvent}/>
                 </div>               
-                <div className={`overflow-y-auto ease-in-out ${isHidden ? 'block' : 'hidden'} lg:block`}>
+                <div className={`w-screen overflow-y-auto ease-in-out ${isHidden ? 'block' : 'hidden'} lg:block`}>
                     <SwapMenu hide={onHideEvent}/>
-                    <div className="p-4">
+                    <div className="">
                             <Outlet/>  
                     </div>  
                     <Footer/>                              

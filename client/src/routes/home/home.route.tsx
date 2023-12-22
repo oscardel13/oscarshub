@@ -7,7 +7,7 @@ import ContactSession from './components/contact-section/contact.section';
 
 const Home = () =>{
     return(
-        <div>
+        <div className='p-4'>
             <HeroSection/>
             <AboutSection/>
             <ResumeSection/>

@@ -48,8 +48,8 @@ const ProjectSection = () => {
             <br/>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {
-                PROJECTS.map(project => 
-                    <div className="bg-[rgba(37,37,50,0.98)]">
+                PROJECTS.map((project,index) => 
+                    <div className="bg-[rgba(37,37,50,0.98)]" key={index}>
                         <img src={project.image} className="cursor-pointer bg-white p-16 w-full"/>
                         <div className="flex flex-col justify-left p-3">
                             <h5>{project.name}</h5>
@@ -63,7 +63,7 @@ const ProjectSection = () => {
                             <br/>
                             <div className='flex flex-row flex-wrap text-gray-400'>
                                 {
-                                    project.technologies.map(technology => 
+                                    project.technologies.map((technology, index) => 
                                         <small key={technology}> {technology} | &nbsp;</small>
                                     )
                                 }
