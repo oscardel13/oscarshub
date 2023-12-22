@@ -1,7 +1,7 @@
 const InfoBarHeader = (props: {hide: () => void}) =>{
     return (
         <div className='flex flex-col justify-center text-center h-60 py-5'>
-            <span onClick={props.hide} className='absolute left-[90%] fill-white lg:hidden'>
+            <span onClick={props.hide} className='absolute right-[2rem] top-[2rem] text-white lg:hidden text-3xl'>
                 &#10006;
             </span>
             <div className='flex justify-center'> 

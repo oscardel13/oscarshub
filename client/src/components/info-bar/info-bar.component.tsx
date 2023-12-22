@@ -4,7 +4,7 @@ import InfoBarContent from '../info-bar-content/info-bar-content.component';
 
 const InfoBar = (props: {hide: () => void}) =>{
     return (
-        <div className='flex flex-col w-full min-w-72 xl:min-w-80 h-full bg-[rgb(32,32,42,0.95)]'>
+        <div className='flex flex-col w-full min-w-72 xl:min-w-80 h-full bg-[rgb(32,32,42,0.95)] pb-[83px] sm:pb-0'>
             <InfoBarHeader hide={props.hide}/>
             <InfoBarContent/>
             <InfoBarSocials/>
