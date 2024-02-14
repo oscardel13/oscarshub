@@ -10,7 +10,7 @@ const PROJECTS = [
         image: BlueprintBarbersPicture,
         link: "https://blueprintbarbers.co/",
         repository: "https://github.com/oscardel13/blueprintbarbers",
-        technologies: [ "React", "Mongodb", "AWS"]
+        technologies: [ "React", "Mongodb", "AWS", "Docker", "Stripe"]
     },
     {
         name: "Empower Canine",
